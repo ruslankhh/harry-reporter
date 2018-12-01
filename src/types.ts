@@ -20,9 +20,14 @@ export interface IPluginOpts {
 }
 
 export interface IHermione extends EventEmitter {
-  config: object;
+  config: IHermioneConfig;
   events: IEvents;
   errors: object;
+}
+
+export interface IHermioneConfig {
+  [key: string]: any;
+  forBrowser?: (browserId: string) => any;
 }
 
 export type prepareDataType = (hermione: IHermione, reportBuilder: any) => any;

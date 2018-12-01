@@ -8,13 +8,8 @@ import subscribeOnToolEvents from './report-subscriber';
 import Runner from './runner';
 import { findTestResult, formatId, formatTests, getShortMD5, mkFullTitle } from './utils';
 import { findNode } from '../../static/modules/utils';
-
-// const ReportBuilderFactory = require('../../report-builder-factory');
-// const reporterHelper = require('../../reporter-helpers');
-//
-const ReportBuilderFactory: any = {};
-const reporterHelper: any = {};
-//
+import ReportBuilder from '../../report-builder/report-builder';
+import * as reporterHelper from '../../reporter-helpers';
 
 export default class HermioneRunner {
   public hermione: any;
@@ -39,7 +34,7 @@ export default class HermioneRunner {
     this.reportPath = pluginConfig.path;
 
     this.eventSource = new EventSource();
-    this.reportBuilder = ReportBuilderFactory.create(hermione, pluginConfig);
+    this.reportBuilder = new ReportBuilder(hermione, pluginConfig);
 
     this.tests = {};
   }

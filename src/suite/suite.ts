@@ -2,9 +2,7 @@ import _ from 'lodash';
 import path from 'path';
 import Uri from 'urijs';
 import { default as urlLib } from 'url';
-import { getHermioneUtils } from '../plugin-utils';
-
-const { getSuitePath } = getHermioneUtils();
+import { getSuitePath } from '../plugin-utils';
 
 import { ITestResult } from '../report-builder/types';
 import { IPluginOpts } from '../types';

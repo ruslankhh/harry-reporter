@@ -5,7 +5,7 @@ import _ from 'lodash';
 import cliCommands from './cli-commands';
 import parseConfig from './config';
 import ReportBuilder from './report-builder/report-builder';
-import utils from './server-utils';
+import * as utils from './server-utils';
 import { IHermione, IPluginOpts, prepareDataType, prepareImagesType } from './types';
 
 Promise.promisifyAll(fs);

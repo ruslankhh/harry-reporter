@@ -1,10 +1,8 @@
 import _ from 'lodash';
 
 import { ERROR, FAIL, SUCCESS } from '../constants/test-statuses';
-import { getHermioneUtils } from '../plugin-utils';
+import { getSuitePath } from '../plugin-utils';
 import { getImagesFor } from '../server-utils';
-
-const { getSuitePath } = getHermioneUtils();
 
 import { ITestResult } from '../report-builder/types';
 import Suite from '../suite/suite';

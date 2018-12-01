@@ -1,15 +1,9 @@
 import clientEvents from '../constants/client-events';
 import { findTestResult } from './utils';
-
-// const { RUNNING } = require('../../../constants/test-statuses');
-// const { getSuitePath } = require('../../../plugin-utils').getHermioneUtils();
-// const { saveTestImages, saveBase64Screenshot } = require('../../../reporter-helpers');
-//
-const RUNNING = 'a';
-const getSuitePath = (a: any) => console.log(1);
-const saveTestImages = (a: any, b: any) => Promise.resolve();
-const saveBase64Screenshot = (a: any, b: any) => Promise.resolve();
-//
+import { RUNNING } from '../../constants/test-statuses';
+import { getSuitePath } from '../../plugin-utils';
+import { saveTestImages, saveBase64Screenshot } from '../../reporter-helpers';
+import { ITestResult } from '../../report-builder/types';
 
 export default (hermione: any, reportBuilder: any, client: any, reportPath: string) => {
   function failHandler(testResult: any) {
@@ -23,7 +17,7 @@ export default (hermione: any, reportBuilder: any, client: any, reportPath: stri
     return Promise.all(actions);
   }
 
-  hermione.on(hermione.events.SUITE_BEGIN, (suite: any) => {
+  hermione.on(hermione.events.SUITE_BEGIN, (suite: ITestResult) => {
     if (suite.pending) {
       return;
     }

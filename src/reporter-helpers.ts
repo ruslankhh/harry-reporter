@@ -2,7 +2,7 @@ import Promise from 'bluebird';
 import fs from 'fs-extra';
 import path from 'path';
 
-import utils from './server-utils';
+import * as utils from './server-utils';
 import TestResult from './test-result/test-result';
 
 const saveAssertViewImages = (testResult: TestResult, reportPath: string) => {

@@ -10,6 +10,7 @@ export interface ITree {
 }
 
 export interface ITestResult {
+  pending?: any;
   attempt?: number;
   status?: string;
   browserId?: string;
